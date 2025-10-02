@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleganza - Moda Contemporânea</title>
+    <title>Ícones da Moda - Legends of Style</title>
     <style>
         body {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', serif;
+            font-family: 'Playfair Display', serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c2c2c;
+            background: #fafafa;
         }
 
         * {
@@ -20,17 +21,17 @@
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -39,9 +40,13 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-menu {
@@ -49,214 +54,321 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-menu a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-menu a:hover {
-            color: #d4af37;
+            color: #ffd93d;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        linear-gradient(135deg, #f5f5dc 0%, #deb887 100%);
-            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cta-button {
-            background: #d4af37;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
         .cta-button:hover {
-            background: #b8941f;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
         }
 
-        /* Collections Section */
-        .collections {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+        /* Icons Section */
+        .icons-section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c1810;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+            position: relative;
         }
 
-        .collection-grid {
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .icons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .collection-card {
+        .icon-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
         }
 
-        .collection-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .icon-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .card-image {
-            height: 250px;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            height: 300px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: #666;
+            font-size: 6rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .icon-card:hover .card-image::before {
+            transform: translateX(100%);
         }
 
         .card-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .card-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            color: #2c1810;
+            color: #2c2c2c;
         }
 
-        .card-content p {
+        .card-era {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-description {
             color: #666;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
-        .price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #d4af37;
-        }
-
-        /* Features Section */
-        .features {
-            background: #f8f8f8;
-            padding: 4rem 2rem;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h3 {
-            color: #2c1810;
-            margin-bottom: 1rem;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .newsletter-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-form {
+        .card-tags {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
             flex-wrap: wrap;
-            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .newsletter-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 1rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-
-        .newsletter-button {
-            background: #d4af37;
+        .tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        .newsletter-button:hover {
-            background: #b8941f;
+        /* Timeline Section */
+        .timeline-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 5rem 2rem;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ff6b6b, #ffd93d);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-year {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            padding: 5rem 2rem;
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid transparent;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: #ffd93d;
+        }
+
+        .quiz-option.selected {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            border-color: #ffd93d;
         }
 
         /* Footer */
@@ -275,7 +387,7 @@
         }
 
         .footer-section h3 {
-            color: #d4af37;
+            color: #ffd93d;
             margin-bottom: 1rem;
         }
 
@@ -288,7 +400,7 @@
         }
 
         .footer-section a:hover {
-            color: #d4af37;
+            color: #ffd93d;
         }
 
         .footer-bottom {
@@ -309,13 +421,18 @@
                 font-size: 2.5rem;
             }
 
-            .newsletter-form {
-                flex-direction: column;
-                align-items: center;
+            .timeline::before {
+                left: 20px;
             }
 
-            .newsletter-input {
-                min-width: 100%;
+            .timeline-item {
+                width: calc(100% - 60px);
+                left: 60px !important;
+                text-align: left !important;
+            }
+
+            .icons-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -324,13 +441,13 @@
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo">ELEGANZA</div>
+            <div class="logo">STYLE LEGENDS</div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#collections">Coleções</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#icons">Ícones</a></li>
+                    <li><a href="#timeline">História</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
                 </ul>
             </nav>
         </div>
@@ -339,105 +456,167 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Moda que Inspira</h1>
-            <p>Descubra as últimas tendências em moda contemporânea. Peças únicas que refletem seu estilo pessoal e sofisticação.</p>
-            <a href="#collections" class="cta-button">Explorar Coleção</a>
+            <h1>Ícones da Moda</h1>
+            <p>Descubra as personalidades que revolucionaram o mundo da moda e definiram tendências que perduram até hoje. Uma jornada através do estilo, elegância e inovação.</p>
+            <a href="#icons" class="cta-button">Explorar Ícones</a>
         </div>
     </section>
 
-    <!-- Collections Section -->
-    <section class="collections" id="collections">
-        <h2 class="section-title">Nossas Coleções</h2>
-        <div class="collection-grid">
-            <div class="collection-card" onclick="showDetails('Vestido Elegante')">
-                <div class="card-image">👗</div>
+    <!-- Icons Section -->
+    <section class="icons-section" id="icons">
+        <h2 class="section-title">Lendas do Estilo</h2>
+        <p class="section-subtitle">Conheça as personalidades que transformaram a moda em arte e inspiraram gerações com seu estilo único e visão revolucionária.</p>
+        
+        <div class="icons-grid">
+            <div class="icon-card" onclick="showIconDetails('Coco Chanel')">
+                <div class="card-image">👑</div>
                 <div class="card-content">
-                    <h3>Vestido Elegante</h3>
-                    <p>Perfeito para ocasiões especiais, com tecido premium e corte impecável.</p>
-                    <div class="price">R$ 299,90</div>
+                    <h3>Coco Chanel</h3>
+                    <div class="card-era">1883-1971</div>
+                    <p class="card-description">Revolucionou a moda feminina libertando as mulheres dos espartilhos. Criou o icônico "pretinho básico" e o perfume Chanel Nº 5. Sua filosofia: "A moda sai de moda, o estilo jamais."</p>
+                    <div class="card-tags">
+                        <span class="tag">Elegância</span>
+                        <span class="tag">Liberdade</span>
+                        <span class="tag">Atemporalidade</span>
+                    </div>
                 </div>
             </div>
-            <div class="collection-card" onclick="showDetails('Blazer Executivo')">
-                <div class="card-image">🧥</div>
+
+            <div class="icon-card" onclick="showIconDetails('Audrey Hepburn')">
+                <div class="card-image">🌟</div>
                 <div class="card-content">
-                    <h3>Blazer Executivo</h3>
-                    <p>Sofisticação e conforto para o ambiente profissional moderno.</p>
-                    <div class="price">R$ 399,90</div>
+                    <h3>Audrey Hepburn</h3>
+                    <div class="card-era">1929-1993</div>
+                    <p class="card-description">Símbolo de elegância e sofisticação, eternizou looks icônicos em filmes como "Bonequinha de Luxo". Sua parceria com Givenchy definiu o conceito de chique parisiense.</p>
+                    <div class="card-tags">
+                        <span class="tag">Sofisticação</span>
+                        <span class="tag">Cinema</span>
+                        <span class="tag">Givenchy</span>
+                    </div>
                 </div>
             </div>
-            <div class="collection-card" onclick="showDetails('Calça Social')">
-                <div class="card-image">👖</div>
+
+            <div class="icon-card" onclick="showIconDetails('Diana, Princesa de Gales')">
+                <div class="card-image">💎</div>
                 <div class="card-content">
-                    <h3>Calça Social</h3>
-                    <p>Versatilidade e elegância em uma peça essencial do guarda-roupa.</p>
-                    <div class="price">R$ 199,90</div>
+                    <h3>Diana, Princesa de Gales</h3>
+                    <div class="card-era">1961-1997</div>
+                    <p class="card-description">Transformou o protocolo real com seu estilo moderno e acessível. Popularizou designers britânicos e criou looks memoráveis que influenciam a moda até hoje.</p>
+                    <div class="card-tags">
+                        <span class="tag">Realeza</span>
+                        <span class="tag">Modernidade</span>
+                        <span class="tag">Carisma</span>
+                    </div>
                 </div>
             </div>
-            <div class="collection-card" onclick="showDetails('Blusa Casual')">
-                <div class="card-image">👚</div>
+
+            <div class="icon-card" onclick="showIconDetails('Grace Kelly')">
+                <div class="card-image">👸</div>
                 <div class="card-content">
-                    <h3>Blusa Casual</h3>
-                    <p>Conforto e estilo para o dia a dia, com tecidos de alta qualidade.</p>
-                    <div class="price">R$ 149,90</div>
+                    <h3>Grace Kelly</h3>
+                    <div class="card-era">1929-1982</div>
+                    <p class="card-description">De estrela de Hollywood à Princesa de Mônaco, personificou a elegância clássica americana. Inspirou a criação da icônica bolsa Kelly da Hermès.</p>
+                    <div class="card-tags">
+                        <span class="tag">Hollywood</span>
+                        <span class="tag">Clássico</span>
+                        <span class="tag">Hermès</span>
+                    </div>
                 </div>
             </div>
-            <div class="collection-card" onclick="showDetails('Saia Midi')">
-                <div class="card-image">🩱</div>
+
+            <div class="icon-card" onclick="showIconDetails('Twiggy')">
+                <div class="card-image">🎭</div>
                 <div class="card-content">
-                    <h3>Saia Midi</h3>
-                    <p>Feminilidade e modernidade em uma peça atemporal e versátil.</p>
-                    <div class="price">R$ 179,90</div>
+                    <h3>Twiggy</h3>
+                    <div class="card-era">1949-presente</div>
+                    <p class="card-description">Definiu a estética dos anos 60 com seu visual andrógino e minissaias. Primeira supermodelo da história, revolucionou os padrões de beleza da época.</p>
+                    <div class="card-tags">
+                        <span class="tag">Anos 60</span>
+                        <span class="tag">Revolução</span>
+                        <span class="tag">Mod</span>
+                    </div>
                 </div>
             </div>
-            <div class="collection-card" onclick="showDetails('Acessórios')">
-                <div class="card-image">👜</div>
+
+            <div class="icon-card" onclick="showIconDetails('Madonna')">
+                <div class="card-image">⚡</div>
                 <div class="card-content">
-                    <h3>Acessórios</h3>
-                    <p>Complete seu look com nossa seleção exclusiva de bolsas e acessórios.</p>
-                    <div class="price">A partir de R$ 89,90</div>
+                    <h3>Madonna</h3>
+                    <div class="card-era">1958-presente</div>
+                    <p class="card-description">Rainha do pop que constantemente reinventa seu estilo. Popularizou looks provocativos e trabalhou com designers como Jean Paul Gaultier, influenciando gerações.</p>
+                    <div class="card-tags">
+                        <span class="tag">Reinvenção</span>
+                        <span class="tag">Provocação</span>
+                        <span class="tag">Pop Culture</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-container">
-            <h2 class="section-title">Por que Escolher a Eleganza?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">✨</div>
-                    <h3>Qualidade Premium</h3>
-                    <p>Tecidos selecionados e acabamento impecável em todas as peças.</p>
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="timeline-container">
+            <h2 class="section-title">Linha do Tempo da Moda</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1920s</div>
+                        <h3>Era Chanel</h3>
+                        <p>Coco Chanel liberta as mulheres dos espartilhos e introduz o conceito de elegância confortável com o "pretinho básico".</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Receba suas peças em até 3 dias úteis em todo o Brasil.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1950s</div>
+                        <h3>New Look de Dior</h3>
+                        <p>Christian Dior revoluciona a moda pós-guerra com silhuetas femininas e elegantes, definindo a década.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💎</div>
-                    <h3>Design Exclusivo</h3>
-                    <p>Peças únicas desenvolvidas por nossa equipe de designers.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1960s</div>
+                        <h3>Revolução Mod</h3>
+                        <p>Twiggy e Mary Quant popularizam a minissaia e o estilo mod, quebrando convenções tradicionais.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Troca Garantida</h3>
-                    <p>30 dias para trocas e devoluções sem complicações.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1980s</div>
+                        <h3>Power Dressing</h3>
+                        <p>Madonna e outras ícones definem o "power dressing", com ombros marcados e atitude forte.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="newsletter-container">
-            <h2>Fique por Dentro das Novidades</h2>
-            <p>Receba em primeira mão nossas promoções exclusivas e lançamentos da temporada.</p>
-            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-                <button type="submit" class="newsletter-button">Inscrever-se</button>
-            </form>
+    <!-- Quiz Section -->
+    <section class="quiz-section" id="quiz">
+        <div class="quiz-container">
+            <h2 class="section-title">Quiz: Qual Ícone da Moda Você É?</h2>
+            <div id="quiz-content">
+                <div class="quiz-question">Qual é o seu estilo preferido?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this, 'chanel')">
+                        <strong>Clássico e Atemporal</strong><br>
+                        Elegância simples e sofisticada
+                    </div>
+                    <div class="quiz-option" onclick="selectOption(this, 'audrey')">
+                        <strong>Romântico e Feminino</strong><br>
+                        Delicadeza com toque de glamour
+                    </div>
+                    <div class="quiz-option" onclick="selectOption(this, 'madonna')">
+                        <strong>Ousado e Provocativo</strong><br>
+                        Experimental e cheio de atitude
+                    </div>
+                    <div class="quiz-option" onclick="selectOption(this, 'twiggy')">
+                        <strong>Moderno e Minimalista</strong><br>
+                        Linhas limpas e inovação
+                    </div>
+                </div>
+                <button class="cta-button" onclick="showQuizResult()" style="margin-top: 2rem; display: none;" id="quiz-button">Ver Resultado</button>
+            </div>
         </div>
     </section>
 
@@ -445,36 +624,39 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Eleganza</h3>
-                <p>Moda contemporânea que inspira e transforma. Desde 2020 criando peças únicas para mulheres modernas.</p>
+                <h3>Style Legends</h3>
+                <p>Celebrando os ícones que definiram a moda mundial. Uma homenagem ao estilo, elegância e inovação que transcendem o tempo.</p>
             </div>
             <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <a href="#home">Início</a>
-                <a href="#collections">Coleções</a>
-                <a href="#about">Sobre Nós</a>
-                <a href="#contact">Contato</a>
+                <h3>Explore</h3>
+                <a href="#icons">Ícones da Moda</a>
+                <a href="#timeline">História da Moda</a>
+                <a href="#quiz">Quiz de Estilo</a>
+                <a href="#">Galeria de Looks</a>
             </div>
             <div class="footer-section">
-                <h3>Atendimento</h3>
-                <a href="tel:+5511999999999">📞 (11) 99999-9999</a>
-                <a href="mailto:contato@eleganza.com">✉️ contato@eleganza.com</a>
-                <a href="#">💬 Chat Online</a>
+                <h3>Recursos</h3>
+                <a href="#">Biografias Completas</a>
+                <a href="#">Análises de Estilo</a>
+                <a href="#">Tendências Históricas</a>
+                <a href="#">Inspirações</a>
             </div>
             <div class="footer-section">
-                <h3>Redes Sociais</h3>
+                <h3>Conecte-se</h3>
                 <a href="#" target="_blank">📘 Facebook</a>
                 <a href="#" target="_blank">📷 Instagram</a>
-                <a href="#" target="_blank">🐦 Twitter</a>
                 <a href="#" target="_blank">📌 Pinterest</a>
+                <a href="#" target="_blank">🐦 Twitter</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Eleganza. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Style Legends. Todos os direitos reservados. Celebrando a moda através dos tempos.</p>
         </div>
     </footer>
 
     <script>
+        let selectedQuizOption = null;
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -489,44 +671,70 @@
             });
         });
 
-        // Show product details
-        function showDetails(productName) {
-            alert(`Você selecionou: ${productName}\n\nEm breve você será redirecionado para a página do produto com mais detalhes, fotos e opções de tamanho!`);
+        // Show icon details
+        function showIconDetails(iconName) {
+            const details = {
+                'Coco Chanel': 'Gabrielle "Coco" Chanel revolucionou a moda feminina ao criar peças confortáveis e elegantes. Fundou a marca Chanel em 1910 e introduziu o conceito de luxo casual. Suas criações incluem o icônico terno Chanel, o perfume Nº 5 e o "pretinho básico". Sua filosofia era libertar as mulheres das roupas restritivas da época.',
+                
+                'Audrey Hepburn': 'Audrey Hepburn se tornou um ícone de estilo através de seus papéis no cinema e sua parceria com o designer Hubert de Givenchy. Seus looks em "Bonequinha de Luxo" e "Sabrina" definiram a elegância dos anos 50 e 60. Conhecida por seu estilo minimalista, sofisticado e atemporal.',
+                
+                'Diana, Princesa de Gales': 'Diana Spencer transformou a moda real ao misturar protocolo com modernidade. Trabalhou com designers como Catherine Walker e Victor Edelstein, criando looks que eram ao mesmo tempo majestosos e acessíveis. Sua influência na moda continua inspirando designers e celebridades.',
+                
+                'Grace Kelly': 'Grace Kelly personificou a elegância americana clássica. Sua transição de estrela de Hollywood para Princesa de Mônaco foi marcada por looks impecáveis. A famosa bolsa Kelly da Hermès foi nomeada em sua homenagem, simbolizando seu status como ícone de estilo.',
+                
+                'Twiggy': 'Lesley Lawson, conhecida como Twiggy, definiu a estética dos anos 60 com seu visual andrógino e minissaias. Foi a primeira supermodelo da história e quebrou padrões de beleza estabelecidos. Seu estilo mod influenciou uma geração inteira.',
+                
+                'Madonna': 'Madonna Louise Ciccone constantemente reinventa seu estilo, trabalhando com designers como Jean Paul Gaultier e Dolce & Gabbana. Seus looks provocativos e inovadores influenciaram não apenas a música, mas também a moda e a cultura pop mundial.'
+            };
+
+            alert(`${iconName}\n\n${details[iconName]}\n\nClique em "OK" para continuar explorando outros ícones da moda!`);
         }
 
-        // Newsletter subscription
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
+        // Quiz functionality
+        function selectOption(element, value) {
+            // Remove selection from all options
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.classList.remove('selected');
+            });
             
-            // Simulate subscription process
-            const button = event.target.querySelector('button');
-            const originalText = button.textContent;
+            // Add selection to clicked option
+            element.classList.add('selected');
+            selectedQuizOption = value;
             
-            button.textContent = 'Inscrevendo...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                alert(`Obrigado! ${email} foi inscrito com sucesso em nossa newsletter. Você receberá nossas novidades em breve!`);
-                event.target.reset();
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 1500);
+            // Show result button
+            document.getElementById('quiz-button').style.display = 'inline-block';
         }
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 24, 16, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #2c1810 0%, #8b4513 100%)';
-                header.style.backdropFilter = 'none';
+        function showQuizResult() {
+            if (!selectedQuizOption) {
+                alert('Por favor, selecione uma opção primeiro!');
+                return;
             }
-        });
 
-        // Animate cards on scroll
+            const results = {
+                'chanel': {
+                    name: 'Coco Chanel',
+                    description: 'Você tem o estilo clássico e atemporal de Coco Chanel! Prefere elegância simples, peças de qualidade e um guarda-roupa versátil. Seu lema é "menos é mais" e você acredita que o verdadeiro luxo está na simplicidade sofisticada.'
+                },
+                'audrey': {
+                    name: 'Audrey Hepburn',
+                    description: 'Você compartilha o estilo romântico e feminino de Audrey Hepburn! Adora peças delicadas, tem um toque especial para combinar elegância com charme natural. Seu estilo é sofisticado mas acessível, sempre com um quê de magia cinematográfica.'
+                },
+                'madonna': {
+                    name: 'Madonna',
+                    description: 'Você tem a ousadia e atitude de Madonna! Não tem medo de experimentar, adora se reinventar e usar a moda como forma de expressão. Seu estilo é provocativo, inovador e sempre à frente do seu tempo.'
+                },
+                'twiggy': {
+                    name: 'Twiggy',
+                    description: 'Você possui o estilo moderno e minimalista de Twiggy! Prefere linhas limpas, cortes geométricos e não tem medo de quebrar convenções. Seu visual é jovem, fresco e sempre inovador.'
+                }
+            };
+
+            const result = results[selectedQuizOption];
+            alert(`🎉 Seu resultado: ${result.name}!\n\n${result.description}\n\nCompartilhe seu resultado e descubra mais sobre seu ícone de estilo!`);
+        }
+
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -541,14 +749,25 @@
             });
         }, observerOptions);
 
-        // Apply animation to collection cards
-        document.querySelectorAll('.collection-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Apply animation to cards and timeline items
+        document.querySelectorAll('.icon-card, .timeline-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 26, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%)';
+                header.style.backdropFilter = 'none';
+            }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9883de3906aaf18b',t:'MTc1OTQwNDYzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9883e4a5059cf18b',t:'MTc1OTQwNDg5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
